@@ -1,9 +1,9 @@
-const merge = require('webpack-merge')
+const {merge} = require('webpack-merge')
 const common = require('./webpack.sass.common.js')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const globImporter = require('node-sass-glob-importer')
 
-module.exports = merge.smart(
+module.exports = merge(
   common,
   {
     mode: 'production',

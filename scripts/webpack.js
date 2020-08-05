@@ -1,8 +1,8 @@
-const config = require.resolve('./config/webpack.config')
+const configPath = require.resolve('./config/webpack.config')
 const run = require('parallel-webpack').run
 const server = require('./server')
 
-run(config, {
+run(configPath, {
   watch: true,
   maxRetries: 1,
   stats: false,

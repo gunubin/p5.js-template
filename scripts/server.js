@@ -24,7 +24,7 @@ module.exports = function server() {
   })
 
 // php or twig
-  bs.watch(`**/*.(php|twig)`).on('change', file => {
+  bs.watch(`**/*.(php|twig|html)`).on('change', file => {
     bs.reload(file)
   })
 

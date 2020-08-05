@@ -1,13 +1,11 @@
-const merge = require('webpack-merge')
+const {merge} = require('webpack-merge')
 const common = require('./webpack.common.js')
 const webpack = require('webpack')
 const paths = require('./paths')
-const Dotenv = require('dotenv-webpack')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = merge.smart(common, {
+module.exports = merge(common, {
   mode: 'development',
-  devtool: 'heap-module-eval-source-map',
+  devtool: "eval-cheap-module-source-map",
   entry: {
     app: [
       require.resolve('./preImports'),
