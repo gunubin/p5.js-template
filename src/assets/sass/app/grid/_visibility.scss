@@ -1,0 +1,6 @@
+@media (max-width: $screen-phone-max) {
+  @include invisibility('.hidden-phone');
+}
+@media (min-width: $screen-desktop) {
+  @include invisibility('.hidden-desktop');
+}

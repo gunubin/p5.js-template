@@ -1,0 +1,240 @@
+@function fade($from: 0, $to: 1) {
+  $keyframes: (
+    name: 'fade-#{$from}-#{$to}',
+    0: (opacity: $from),
+    100: (opacity: $to),
+  );
+  @return $keyframes;
+}
+
+@function fade-in() {
+  @return fade(0, 1)
+}
+
+@function fade-out() {
+  @return fade(1, 0)
+}
+
+/* property
+------------------------------------------------------------ */
+@function keyframes-property($prefix: '', $name: '', $from: 0, $to: 1, $isPac:false) {
+  $from_name: $from;
+  $to_name: $to;
+  $from_value: $from;
+  $to_value: $to;
+  @if $isPac {
+    $from_name: $from * 100;
+    $to_name: $to * 100;
+    $from_value: $from_name * 1%;
+    $to_value: $to_name * 1%;
+  }
+  $keyframes: (
+    name: '#{unquote($prefix)}-#{$from_name}-#{$to_name}',
+    0: ($name: $from_value),
+    100: ($name: $to_value),
+  );
+  @return $keyframes;
+}
+
+/* scale
+------------------------------------------------------------ */
+@function _scale($prefix: '', $from: 0, $to: 1, $axis: Y, $origin: top) {
+  $origin-value: $origin;
+  @if is-number($origin) {
+    $origin-value: $origin * 1%;
+  }
+  $keyframes: (
+    name: '#{unquote($prefix)}-axis-#{$axis}-origin-#{$origin}-#{$from*100}-#{$to*100}',
+    0: (transform: 'scale#{$axis}(#{$from})', transform-origin: $origin-value),
+    100: (transform: 'Scale#{$axis}(#{$to})', transform-origin: $origin-value),
+  );
+  @return $keyframes;
+}
+
+@function scale-up-in($from: 0, $to: 1) {
+  @return _scale('scaleUpIn', 0, 1, Y, top);
+}
+
+@function scale-up-out() {
+  @return _scale('scaleUpOut', 1, 0, Y, top);
+}
+
+@function scale-down-in($from: 0, $to: 1) {
+  @return _scale('scaleDownIn', $from, $to, Y, bottom);
+}
+
+@function scale-down-out() {
+  @return _scale('scaleDownOut', 1, 0, Y, bottom);
+}
+
+@function scale-left-out() {
+  @return _scale('scaleLeftOut', 1, 0, X, left);
+}
+
+@function scale-left-in() {
+  @return _scale('scaleLeftIn', 0, 1, X, left);
+}
+
+@function scale-right-in() {
+  @return _scale('scaleRightIn', 0, 1, X, right);
+}
+
+@function scale-right-out() {
+  @return _scale('scaleRightOut', 1, 0, X, right);
+}
+
+/* translate
+------------------------------------------------------------ */
+@function _translate($prefix: '', $from: 0, $to: 100, $axis: Y, $origin: top ) {
+  $origin-value: $origin;
+  @if is-number($origin) {
+    $origin-value: $origin * 1%;
+  }
+  $keyframes: (
+    name: '#{unquote($prefix)}-axis-#{$axis}-origin-#{$origin}-#{$from}-#{$to}',
+    0: (transform: 'translate#{$axis}(#{$from*1%})', transform-origin: $origin-value),
+    100: (transform: 'translate#{$axis}(#{$to*1%})', transform-origin: $origin-value),
+  );
+  @return $keyframes;
+}
+
+@function translate-down-in() {
+  @return _translate('translate-down-in', -100, 0, Y, top);
+}
+
+@function translate-down-out($from: 0, $to: 100) {
+  @return _translate('translate-down-out', $from, $to, Y, top);
+}
+
+@function translate-up-in($from: 100, $to: 0) {
+  @return _translate('translate-up-in', $from, $to, Y, bottom);
+}
+
+@function translate-up-out($from: 0, $to: -100) {
+  @return _translate('translate-up-out', $from, $to, Y, bottom);
+}
+
+@function translate-left-in($from: 100, $to: 0) {
+  @return _translate('translate-left-in', $from, $to, X, left);
+}
+
+@function translate-left-out($from: 0, $to: -100) {
+  @return _translate('translate-left-out', $from, $to, X, left);
+}
+
+@function translate-right-in($from: -100, $to: 0) {
+  @return _translate('translate-right-in', $from, $to, X, right);
+}
+
+@function translate-right-out($from: 0, $to: 100) {
+  @return _translate('translate-right-out', $from, $to, X, right);
+}
+
+@function to-color($from, $to) {
+  $keyframes: (
+    name: 'color-#{str-replace($from, '#', '')}-to-#{str-replace($to, '#', '')}',
+    0: (
+      color: $from,
+    ),
+    49.9: (
+      color: $to,
+    ),
+    50: (
+      color: $to,
+    ),
+    100: (
+      color: $from,
+    )
+  );
+  @return $keyframes;
+}
+
+@function knight-rider($suffix: '') {
+  $keyframes: (
+    name: 'knight-rider' + $suffix,
+    0: (
+      transform: 'translateX(-100%)'
+    ),
+    100: (
+      transform: 'translateX(100%)'
+    ),
+  );
+  @return $keyframes;
+}
+
+@function translate-hover-1($direction: 'X') {
+  $keyframes: (
+    name: 'translate#{$direction}-hover-1',
+    0: (
+      transform: 'translate#{$direction}(0%)',
+      transform-origin: '100% 0%',
+    ),
+    100: (
+      transform: 'translate#{$direction}(-100%)',
+      transform-origin: '100% 0%',
+    ),
+  );
+  @return $keyframes;
+}
+
+@function translate-hover-2($direction: 'X') {
+  $keyframes: (
+    name: 'translate#{$direction}-hover-2',
+    0: (
+      transform: 'translate#{$direction}(100%)',
+      transform-origin: '0% 0%',
+    ),
+    100: (
+      transform: 'translate#{$direction}(0%)',
+      transform-origin: '0% 0%',
+    ),
+  );
+  @return $keyframes;
+}
+
+/* translate opacity
+------------------------------------------------------------ */
+@function translate-opacity($prefix: '', $from: 0, $to: 100, $from-opacity: 1, $to-opacity: 0, $axis: Y, $origin: top ) {
+  $keyframes: (
+    name: '#{unquote($prefix)}-#{$from}-#{$to}',
+    0: (
+      opacity: $from-opacity, transform: 'translate#{$axis}(#{$from*1%})', transform-origin: $origin
+    ),
+    100: (
+      opacity: $to-opacity, transform: 'translate#{$axis}(#{$to*1%})', transform-origin: $origin
+    ),
+  );
+  @return $keyframes;
+}
+
+@function translate-opacity-down-in() {
+  @return translate-opacity('translate-opacity-down-in', -100, 0, 0, 1 Y, top);
+}
+
+@function translate-opacity-down-out($from: 0, $to: 100) {
+  @return translate-opacity('translate-opacity-down-out', $from, $to, 1, 0 Y, top);
+}
+
+@function translate-opacity-up-in($from: 100, $to: 0) {
+  @return translate-opacity('translate-opacity-up-in', $from, $to, 0, 1, Y, bottom);
+}
+
+@function translate-opacity-up-out($from: 0, $to: -100) {
+  @return translate-opacity('translate-opacity-up-out', $from, $to, 1, 0, Y, bottom);
+}
+
+@function translate-opacity-left-in($from: 100, $to: 0) {
+  @return translate-opacity('translate-opacity-left-in', $from, $to, 0, 1, X, left);
+}
+
+@function translate-opacity-left-out($from: 0, $to: -100) {
+  @return translate-opacity('translate-opacity-left-out', $from, $to, 1, 0, X, left);
+}
+
+@function translate-opacity-right-in($from: -100, $to: 0) {
+  @return translate-opacity('translate-opacity-right-in', $from, $to, 0, 1, X, right);
+}
+
+@function translate-opacity-right-out($from: 0, $to: 100) {
+  @return translate-opacity('translate-opacity-right-out', $from, $to, 1, 0, X, right);
+}

@@ -1,0 +1,49 @@
+$-keyframes: ();
+@function keyframe-percent($input) {
+  $output: ();
+  @if is-number($input) {
+    $output: ($input * 1%);
+  } @else if is-list($input) {
+    @each $i in $input {
+      $output: append($output, ($i * 1%), comma);
+    }
+  }
+  @return $output;
+}
+
+@mixin keyframes($name, $effects...) {
+  @if index($-keyframes, $name) == null {
+    $-keyframes: append($-keyframes, $name) !global;
+
+    $obj: process-args($effects...);
+    $obj: map-remove($obj, name);
+
+    @keyframes #{$name} {
+      @each $pct, $props in $obj {
+        #{keyframe-percent($pct)} {
+          @each $prop, $value in $props {
+            #{$prop}: #{$value};
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin delay-child($length:10, $delay: 0.1s, $step: 0.01s) {
+  @for $i from 1 through $length {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i*$step+$delay};
+    }
+  }
+}
+
+@mixin transition-delay-child($length:10, $delay: 0.1s, $step: 0.01s) {
+  @for $i from 1 through $length {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$i*$step+$delay};
+    }
+  }
+}
+
+

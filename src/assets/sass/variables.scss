@@ -1,0 +1,154 @@
+/* z-index
+------------------------------------------------------------ */
+$z-index-splashscreen: 9900;
+$z-index-indicator: 9000;
+$z-index-pointer: 8000;
+$z-index-progress: 8000;
+$z-index-page-modal: 6000;
+$z-index-page-transition: 5060;
+$z-index-hamburger-button: 5000;
+$z-index-header: 4500;
+$z-index-nav: 4300;
+$z-index-side: 4000;
+$z-index-pagetop-button: 3000;
+$z-index-main: 1000;
+$z-index-footer: 500;
+
+/* app
+------------------------------------------------------------ */
+$kv-gutter-width: 30px;
+$kv-gutter-width-desktop: 90px;
+$container-gutter-width: (180px / 3);
+$container-gutter-width-desktop-num: 360;
+$container-gutter-width-desktop: #{$container-gutter-width-desktop-num}px;
+//$container-gutter-width: 90px;
+
+/* size
+------------------------------------------------------------ */
+$heading-line-height: 1.25;
+$heading-line-height-desktop: 1.25;
+$text-line-height: 1.842;
+$text-line-height-desktop: 2.153846154;
+
+@function icon-size($size: 1, $bp: phone) {
+  $sizes: (
+    1: (phone: 64, desktop: 64),
+    2: (phone: 32, desktop: 32),
+    3: (phone: 16, desktop: 16),
+    4:(phone: 8, desktop: 8)
+  );
+  @return map-get(map-get($sizes, $size), $bp);
+}
+
+@function label-size($size: 1, $bp: phone) {
+  $sizes: (
+    1: (phone: 38/3, desktop: 14),
+    2: (phone: 10, desktop: 12),
+    3: (phone: 8, desktop: 10)
+  );
+  @return map-get(map-get($sizes, $size), $bp);
+}
+
+@function lead-size($size: 1, $bp: phone) {
+  $sizes: (
+    1: (phone: 23.33333, desktop: 30),
+    2: (phone: 19.33333, desktop: 30)
+  );
+  @return map-get(map-get($sizes, $size), $bp);
+}
+
+@function lead-size-ja($size: 1, $bp: phone) {
+  $sizes: (
+    1: (phone: 48/3, desktop: 24),
+  );
+  @return map-get(map-get($sizes, $size), $bp);
+}
+
+/* grid
+------------------------------------------------------------ */
+$grid-gutter-width: 20px;
+$grid-gutter-width-md: 180px;
+
+/* text
+------------------------------------------------------------ */
+$line-height: 1.0 !default;
+
+/* color
+------------------------------------------------------------ */
+$white: #fff;
+$black: #000;
+
+$brand-color: #000;
+$brand-dark-color: #8a7353;
+$brand-dark2-color: #594a2a;
+
+$meta-color: #c7887f;
+
+$bg-color: #cfbe9b;
+$bg-color2: #f3eae7;
+
+$red300: red;
+
+$bg-gray-color: #181818;
+$bg-light-gray-color: #262626;
+
+//$input-bg-color: rgba(241, 241, 241, 0.1);
+$input-bg-color: black;
+$input-bg-white-color: #efefef;
+$input-placeholder-color: rgba(255, 255, 255, 0.2);
+$input-placeholder-white-color: #767676;
+$input-border-color: rgba(255, 255, 255, 0.2);
+$input-error-color: red;
+
+//$body-color: #8c8c8c;
+$body-color: rgba(0, 0, 0, 1.0);
+$body-color-desktop: rgba(0, 0, 0, 1.0);
+
+$gray600: #1f1f1f;
+$gray500: #3b3b3b;
+$gray400: #656565;
+$gray300: #878787;
+$gray200: #acacac;
+$gray100: #d5d5d5;
+$gray50: #f8f8f8;
+$gray: rgba(255, 255, 255, 0.5);
+
+//$blue300: #3364A7;
+//$blue200: #537FBB;
+//$blue100: #b5ceff;
+//$yellow300: #a7a32d;
+//$yellow200: #bbb875;
+//$yellow100: #fffdcb;
+//$red300: #cb251e;
+//$red200: #bb5f6b;
+//$red100: #ffa8a7;
+
+/* misc
+------------------------------------------------------------ */
+$table-border: #ccc;
+
+/* header
+------------------------------------------------------------ */
+$header-height-desktop: 100px;
+
+/* media type
+------------------------------------------------------------ */
+$media-query: (phone, desktop);
+
+/* container
+------------------------------------------------------------ */
+$container-width2: 1220px;
+//$container-width: 1440px;
+$container-width: 9999px;
+$container-middle-width: 1530px;
+$container-wide-width: 1682px;
+$container-narrow-width: 900px;
+
+/* color
+------------------------------------------------------------ */
+$border-color: #f3eee4;
+$border-white-color: rgba(255, 255, 255, 0.2);
+
+/* font-family
+------------------------------------------------------------ */
+$font-family: 'Noto Sans JP', "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, sans-serif !default;

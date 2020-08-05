@@ -1,0 +1,43 @@
+@import 'grid/visibility';
+@import 'grid/grid';
+
+@include build-grid('');
+@include mq-desktop {
+  @include build-grid('', 'col-desktop', $gutter-width: $grid-gutter-width-md);
+}
+
+.row-reverse-desktop {
+  @include mq-desktop {
+    flex-direction: row-reverse;
+  }
+}
+
+.no-gutters {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+
+  > [class^="col-"],
+  > [class*=" col-"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    > * {
+      @include mq-desktop {
+        height: 100%;
+      }
+    }
+  }
+}
+
+/*
+FIXME: xs,sm,lg の名称をデバイス名にする。xs,sm,lgだとサイズレベルと混合する
+@include mq-xs {
+  @include build-grid('', 'col-xs');
+}
+@include mq-sm {
+  @include build-grid('', 'col-sm');
+}
+@include mq-lg {
+  @include build-grid('', 'col-lg');
+}
+*/

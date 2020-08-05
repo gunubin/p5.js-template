@@ -1,0 +1,113 @@
+//$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji" !default;
+$font-family: "Hiragino Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, sans-serif !default;
+
+html {
+  -webkit-text-size-adjust: none;
+
+  //font-size: 10px;
+//
+}
+
+body {
+  //font-size: 62.5%;
+  -webkit-backface-visibility: hidden;
+  line-height: 1.0;
+  font-family: $font-family;
+}
+
+* {
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+section, header, footer {
+  display: block;
+}
+
+section {
+  position: relative;
+}
+
+svg {
+  -webkit-backface-visibility: hidden;
+}
+
+p, li, dt, dd, th, td, pre {
+  line-break: strict;
+
+  word-break: break-strict;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p, div, dl, dt, dd, ul, ol, li {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+em {
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+
+  font-weight: normal;
+}
+
+input,
+button,
+select,
+textarea {
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input[type='text'],
+textarea {
+  -webkit-appearance: none;
+}
+
+select:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+hr {
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  outline: none;
+}

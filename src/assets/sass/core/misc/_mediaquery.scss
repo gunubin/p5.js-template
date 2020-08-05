@@ -1,0 +1,47 @@
+@mixin media($screen-min) {
+  @media (min-width: $screen-min) {
+    @content;
+  }
+}
+@mixin mq-phone-only {
+  @media (max-width: $screen-phone-max) {
+    @content;
+  }
+}
+
+@mixin mq-phone {
+  @media (min-width: $screen-phone-min) {
+    @content;
+  }
+}
+
+@mixin mq-desktop {
+  @media (min-width: $screen-desktop-min) {
+    @content;
+  }
+}
+
+@mixin mq-large-desktop {
+  @media (min-width: $screen-large-desktop-min) {
+    @content;
+  }
+}
+
+@mixin mq($media) {
+  $screen-min: map-get($screen-min-list, $media);
+  @media (min-width: $screen-min) {
+    @content;
+  }
+}
+
+@mixin mq-large-height-desktop {
+  @media (min-height: #{$viewport-height-desktop}px) {
+    @content;
+  }
+}
+
+@mixin mq-viewport-desktop {
+  @media (min-width: #{$viewport-desktop}px) {
+    @content;
+  }
+}

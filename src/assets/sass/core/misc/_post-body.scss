@@ -1,0 +1,222 @@
+@mixin post-body($wordpress: true) {
+  @include clearfix;
+
+  @include fz-phone(30, 60, 50, false);
+  color: $body-color;
+  @include mq-desktop {
+    @include fz(13, 30, 50, false);
+    color: $body-color-desktop;
+  }
+  h1, h2 {
+    font-weight: 500;
+    @include fz(16, 16 * 1.5);
+    color: inherit;
+    //padding-bottom: 0.6em;
+    //border-bottom: solid 2px;
+    @include mq-desktop {
+      @include fz(24, 20 * 1.5, 200);
+    }
+  }
+  h3, h4, h5, h6 {
+    @include fz-phone(30, 60, 0, false);
+
+    position: relative;
+
+    &:after {
+      content: 'ー';
+      display: block;
+      opacity: 0.6;
+      padding-top: 0.5em;
+      padding-bottom: 1em;
+      line-height: 1;
+      font-size: 80%;
+      @include mq-desktop {
+        padding-top: 1.5em;
+        padding-bottom: 0;
+      }
+    }
+
+    color: inherit;
+    font-weight: 400;
+    @include mq-desktop {
+      @include fz(16, 30, 0, false);
+      margin-bottom: -0.8em !important;
+      font-weight: 700;
+    }
+
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: $space-xxl 0 $space-lg;
+    //&:first-child {
+    //  margin-top: 0;
+    //}
+    @include mq-desktop {
+      margin: $space-xl-desktop 0 0;
+    }
+  }
+  img {
+    //margin: $line-height-computed 0;
+    max-width: 100%;
+    height: auto;
+  }
+  iframe {
+    max-width: 100%;
+  }
+  blockquote {
+    margin: 0 0 20px;
+    border-left: 5px solid $border-color;
+    padding: 10px 20px;
+
+    font-size: 17.5px;
+  }
+  code {
+    border-radius: 4px;
+    padding: 2px 4px;
+
+    background-color: $gray100;
+
+    color: $meta-color;
+    font-size: 90%;
+  }
+  pre {
+    margin: 0 0 10px;
+    border: 1px solid $gray300;
+    border-radius: 4px;
+    padding: 9.5px;
+
+    display: block;
+
+    background-color: $gray100;
+
+    line-height: 1.42857;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: $gray500;
+    font-size: 13px;
+  }
+  dl {
+  }
+  dt {
+    color: $body-color;
+    font-weight: 500;
+  }
+  dd {
+    text-indent: 2em;
+  }
+  b, strong {
+    color: $body-color;
+    font-weight: 500;
+  }
+  a {
+    @include underline-multi(1px, $bottom: 3px, $bottom-desktop: 4px);
+    word-wrap: break-word;
+  }
+  p {
+    margin-top: 1.6666em;
+  }
+  strong {
+    font-weight: bold;
+  }
+  em {
+    font-style: italic;
+  }
+  ul {
+    list-style-type: disc;
+
+    li {
+      margin-left: 2.0em;
+
+      list-style-type: inherit;
+    }
+  }
+  ol {
+    list-style-type: decimal;
+
+    li {
+      margin-left: 2.0em;
+
+      list-style-type: inherit;
+    }
+  }
+  table {
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 1px solid $border-color;
+
+    width: 100%;
+    max-width: 100%;
+
+    table-layout: auto;
+
+    tr {
+      th, td {
+        padding: 20px 0;
+        @include mq-desktop {
+          padding: 30px 0;
+        }
+      }
+
+      th {
+        color: $black;
+        font-weight: 500;
+      }
+    }
+
+    tr {
+      th,
+      td {
+        border: none;
+        border-top: 1px solid $border-color;
+      }
+    }
+  }
+
+  @if $wordpress {
+    img[class*="wp-image-"],
+    img[class*="attachment-"] {
+      max-width: 100%;
+      height: auto;
+    }
+    .alignnone {
+    }
+    .aligncenter {
+      margin-right: auto;
+      margin-left: auto;
+
+      display: block;
+    }
+    .alignright {
+      margin-left: $space-md;
+
+      width: 50%;
+      float: right;
+
+      display: inline;
+      @include mq-desktop {
+        margin-left: $space-md-desktop;
+      }
+
+      @include mq-desktop {
+        width: auto;
+      }
+    }
+    .alignleft {
+      margin-right: $space-md;
+
+      width: 50%;
+      float: left;
+
+      display: inline;
+      @include mq-desktop {
+        margin-right: $space-md-desktop;
+      }
+
+      @include mq-desktop {
+        width: unset;
+      }
+    }
+    .clear {
+      clear: both;
+    }
+  }
+}

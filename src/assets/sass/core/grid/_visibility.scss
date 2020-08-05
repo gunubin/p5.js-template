@@ -1,0 +1,30 @@
+@mixin visible($display: block) { display: $display !important; }
+@mixin visible-inline-block() { display: inline-block !important; }
+@mixin visible-inline() { display: inline !important; }
+@mixin visible-inline() { display: inline !important; }
+@mixin visible-table() { display: table !important; }
+@mixin visible-tr() { display: table-row !important; }
+@mixin visible-td() { display: table-cell !important; }
+@mixin hidden() { display: none !important; }
+
+@mixin visibility($parent) {
+  #{$parent} {
+    @if str-index($parent, 'inline-block') != null {
+      @include visible-inline-block();
+    } @else if(str-index($parent, 'inline') != null) {
+      @include visible-inline();
+    } @else {
+      @include visible();
+    }
+  }
+  table#{$parent} { @include visible-table() }
+  tr#{$parent} { @include visible-tr() }
+  th#{$parent} { @include visible-td() }
+  td#{$parent} { @include visible-td() }
+}
+@mixin invisibility($parent) {
+  #{$parent} {
+    display: none !important;
+  }
+}
+

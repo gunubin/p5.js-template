@@ -1,0 +1,20 @@
+@mixin replace($original, $replacement) {
+  @at-root #{selector-replace(&, $original, $replacement)} {
+    & {
+      @content
+    }
+  }
+}
+
+@mixin prepend($selector) {
+  @include replace(quote(&), '#{$selector} #{quote(&)}') {
+    @content;
+  }
+}
+
+@mixin prefix($selector) {
+  @include replace(quote(&), '#{$selector}#{quote(&)}') {
+    @content;
+  }
+}
+

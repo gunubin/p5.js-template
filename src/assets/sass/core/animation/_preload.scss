@@ -1,0 +1,21 @@
+/* preload for ie11
+  http://qiita.com/sawadays0118/items/bd0731878e9eb49c03f5#-media%E4%BB%A5%E4%B8%8B%E3%81%ABcss-animation%E3%81%AEkeyframes%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E3%81%A8%E5%8B%95%E4%BD%9C%E3%81%97%E3%81%AA%E3%81%84
+------------------------------------------------------------ */
+@mixin preload-keyframes($arg) {
+  $name: map-get(process-args($arg), name);
+  @include keyframes($name, $arg);
+}
+@include preload-keyframes(translate-down-out())
+@include preload-keyframes(translate-down-in())
+@include preload-keyframes(translate-up-out())
+@include preload-keyframes(translate-up-in())
+@include preload-keyframes(scale-down-out())
+@include preload-keyframes(scale-down-in())
+@include preload-keyframes(scale-up-out())
+@include preload-keyframes(scale-up-in())
+@include preload-keyframes(scale-left-in())
+@include preload-keyframes(scale-left-out())
+@include preload-keyframes(scale-right-in())
+@include preload-keyframes(scale-right-out())
+@include preload-keyframes(fade-in())
+@include preload-keyframes(fade-out())

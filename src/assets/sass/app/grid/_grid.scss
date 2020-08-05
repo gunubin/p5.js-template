@@ -1,0 +1,30 @@
+// gutterの上書き
+@mixin override-gutter($gutter-width) {
+  .container {
+    padding-right: #{$gutter-width/2}px;
+    padding-left: #{$gutter-width/2}px;
+  }
+  &.row, .row {
+    margin-right: -#{$gutter-width/2}px;
+    margin-left: -#{$gutter-width/2}px;
+  }
+  [class^="col-"] {
+    padding-right: #{$gutter-width/2}px;
+    padding-left: #{$gutter-width/2}px;
+  }
+  [class="col"] {
+    padding-right: #{$gutter-width/2}px;
+    padding-left: #{$gutter-width/2}px;
+  }
+}
+
+.gutter-lg {
+  @include override-gutter($space-lg);
+}
+.gutter-md {
+  @include override-gutter($space-md);
+}
+.gutter-0 {
+  @include override-gutter(0);
+}
+
