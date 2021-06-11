@@ -5,17 +5,11 @@
  */
 /* @flow */
 import {domLoaded} from './lib/promisfy'
-import ComponentLifecycle from './lib/ComponentLifecycle'
-import App from './components/App'
 
 
 const applicationSequence = async () => {
   await domLoaded()
-
-  const componentLifecycle = new ComponentLifecycle({
-    // '.js-app': App,
-  })
-  componentLifecycle.start()
+  // do something
 }
 
 applicationSequence()

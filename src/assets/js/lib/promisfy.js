@@ -9,7 +9,7 @@ const timelinePromise = (timeline) => {
 
 const domLoaded = () => new Promise(resolve => {
   if (document.readyState !== "loading") {
-    setImmediate(() => resolve())
+    setTimeout(() => resolve(), 0)
     return
   }
   window.addEventListener('load', function () {

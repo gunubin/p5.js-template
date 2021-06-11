@@ -1,12 +1,13 @@
-const configPath = require.resolve('./config/webpack.config')
-const run = require('parallel-webpack').run
-const server = require('./server')
+const configure = require('../config/webpack.config')
+const statsOptions = require('../config/stats')
+const webpack = require('webpack')
 
-run(configPath, {
-  watch: true,
-  maxRetries: 1,
-  stats: false,
-  maxConcurrentWorkers: 2, // use 2 workers
-}, () => {
-  server()
+const webpackEnv = 'development'
+
+const compiler = webpack(configure(webpackEnv))
+compiler.watch({}, (err, stats) => {
+  console.log(stats.toString(statsOptions))
+  if (err) {
+    console.log(err)
+  }
 })
