@@ -3,14 +3,10 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        targets: {
-          ie: 11,
-        },
         useBuiltIns: 'entry',
         corejs: 3,
       },
     ],
-    '@babel/preset-flow',
   ],
   plugins: [
     '@babel/plugin-transform-runtime',

@@ -966,9 +966,11 @@ var _promisfy = __webpack_require__(/*! ./lib/promisfy */ "./src/assets/js/lib/p
  * Copyright (c) 2020 Shanord Inc.
  * https://shanord.com/
  */
+
+/* @flow */
 var applicationSequence = /*#__PURE__*/function () {
-  var _ref = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-    return _regenerator.default.wrap(function _callee$(_context) {
+  var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+    return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
