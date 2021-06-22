@@ -1,4 +1,4 @@
-class Point {
+export class Point {
   rez
   x = 0
   y = 0
@@ -28,11 +28,23 @@ class Point {
     this.color = this.weight > 1.0 ? 1 : 0
   }
 
+  setCount(count) {
+    this.count = count
+  }
+
   update() {
-    stroke(0, 50)
-    text(Math.floor(this.weight*100)/100, this.x + 5, this.y + 10)
-    stroke(this.color * 255, 50)
-    strokeWeight(3)
+    stroke(100 )
+    noFill()
+    textFont('gosic')
+    textSize(10)
+    text(Math.floor(this.weight * 100) / 100, this.x + 5, this.y + 10)
+    // text(this.count, this.x + 5, this.y + 10)
+    // stroke(this.color * 255, 50)
+    // strokeWeight(3)
+    // if(this.weight > 1.0) {
+    //   fill(0)
+    //   rect(this.x, this.y, this.rez, this.rez)
+    // }
     point(this.x, this.y)
   }
 

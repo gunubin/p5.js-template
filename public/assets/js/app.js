@@ -1,6 +1,44 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/***/ ((module) => {
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return arrayLikeToArray(arr);
+}
+
+module.exports = _arrayWithoutHoles;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/asyncToGenerator.js ***!
@@ -48,6 +86,50 @@ module.exports.default = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/***/ ((module) => {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
@@ -65,6 +147,81 @@ module.exports.default = module.exports, module.exports.__esModule = true;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/***/ ((module) => {
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/***/ ((module) => {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableSpread;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray;
+module.exports.default = module.exports, module.exports.__esModule = true;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
@@ -73,6 +230,532 @@ module.exports.default = module.exports, module.exports.__esModule = true;
 
 module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
 
+
+/***/ }),
+
+/***/ "./src/assets/js/lib/Component.js":
+/*!****************************************!*\
+  !*** ./src/assets/js/lib/Component.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js"));
+
+var _p = _interopRequireDefault(__webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"));
+
+/**
+ * Component Class
+ */
+var Component = /*#__PURE__*/function () {
+  /**
+   * constructor
+   */
+  function Component(selector) {
+    (0, _classCallCheck2["default"])(this, Component);
+    this.isShared = false;
+    this.children = {};
+    this.handlers = new Map();
+    this.container = document.body;
+    this.element = void 0;
+    this.selector = void 0;
+    this.app = void 0;
+    this._mount = this._mount.bind(this);
+    this._unmount = this._unmount.bind(this);
+
+    if (selector) {
+      this.attach(selector);
+    }
+  }
+
+  (0, _createClass2["default"])(Component, [{
+    key: "append",
+    value: function append(component, selector) {
+      // for ie. obj.constructor.nameがとれない
+      var _getClassName = function getClassName(obj) {
+        if (obj.constructor.name) {
+          return obj.constructor.name;
+        }
+
+        var regex = new RegExp(/^\s*function\s*(\S*)\s*\(/);
+
+        _getClassName = function getClassName(obj) {
+          return obj.constructor.toString().match(regex)[1];
+        };
+
+        return _getClassName(obj);
+      };
+
+      var className = _getClassName(component);
+
+      this.children[className] = component;
+      this[className] = component;
+
+      if (selector) {
+        component.attach(selector);
+      }
+
+      return this;
+    }
+  }, {
+    key: "get",
+    value: function get(name) {
+      return this.children[name];
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      var _this = this;
+
+      Object.keys(this.children).map(function (key) {
+        var child = _this.children[key];
+        child.destroy();
+        delete _this[key];
+      });
+      this.children = [];
+      this.destructor();
+      this.removeAllEventListeners();
+
+      this._unmount();
+    }
+  }, {
+    key: "emit",
+    value: function emit(type) {
+      // FIXME: polyfill しっかり
+      var event = null;
+
+      if (typeof Event === 'function') {
+        event = new Event(type);
+      } else {
+        event = document.createEvent('Event');
+        event.initEvent(type, true, true);
+      }
+
+      this.element.dispatchEvent(event);
+    }
+  }, {
+    key: "on",
+    value: function on(type, handler) {
+      this.handlers.set(handler, type);
+      this.element.addEventListener(type, handler);
+    }
+  }, {
+    key: "off",
+    value: function off(type, handler) {
+      if (handler) {
+        this.handlers["delete"](handler);
+        this.element.removeEventListener(type, handler);
+      } else {
+        this.removeAllEventListeners(type);
+      }
+    }
+  }, {
+    key: "removeAllEventListeners",
+    value: function removeAllEventListeners(type) {
+      var _this2 = this;
+
+      var remove = [];
+      this.handlers.forEach(function (t, h) {
+        if (!type || type && t === type) {
+          _this2.element.removeEventListener(t, h);
+
+          remove.push(h);
+        }
+      });
+      remove.map(function (r) {
+        _this2.handlers["delete"](r);
+      });
+    }
+  }, {
+    key: "attach",
+    value: function attach(selector) {
+      this.selector = selector;
+
+      if (!this.selector) {
+        throw new ReferenceError('selector is not found.');
+      }
+
+      this.element = this._select();
+
+      if (!this.element) {
+        throw new ReferenceError("".concat(selector, ": element is not found."));
+      }
+
+      if (this.element) {
+        this._mount();
+      }
+    }
+  }, {
+    key: "setup",
+    value: function setup() {}
+  }, {
+    key: "draw",
+    value: function draw() {}
+  }, {
+    key: "sketch",
+    value: function sketch(p) {
+      var _this3 = this;
+
+      p.setup = function () {
+        return _this3.setup(p);
+      };
+
+      p.draw = function () {
+        return _this3.draw(p);
+      };
+    }
+  }, {
+    key: "_mount",
+    value: function _mount() {
+      this.app = new _p["default"](this.sketch.bind(this), this.element);
+      this.mount();
+    }
+  }, {
+    key: "_unmount",
+    value: function _unmount() {
+      this.unmount();
+    }
+    /**
+     * select
+     */
+
+  }, {
+    key: "_select",
+    value: function _select() {
+      if (typeof this.selector === 'function') {
+        return this.selector();
+      }
+
+      return this.container && this.container.querySelector(this.selector);
+    }
+  }, {
+    key: "setContainer",
+    value: function setContainer(container) {
+      this.container = container;
+    }
+    /**
+     * mount
+     */
+
+  }, {
+    key: "mount",
+    value: function mount() {}
+    /**
+     * loaded
+     */
+
+  }, {
+    key: "loaded",
+    value: function loaded() {}
+    /**
+     * view
+     */
+
+  }, {
+    key: "view",
+    value: function view() {}
+    /**
+     * willUnmount
+     */
+
+  }, {
+    key: "willUnmount",
+    value: function willUnmount() {}
+    /**
+     * unmount
+     */
+
+  }, {
+    key: "unmount",
+    value: function unmount() {}
+    /**
+     * destructor
+     */
+
+  }, {
+    key: "destructor",
+    value: function destructor() {}
+  }]);
+  return Component;
+}();
+
+exports.default = Component;
+
+/***/ }),
+
+/***/ "./src/assets/js/lib/ComponentArray.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/lib/ComponentArray.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js"));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js"));
+
+var _Component = _interopRequireDefault(__webpack_require__(/*! ./Component */ "./src/assets/js/lib/Component.js"));
+
+/**
+ * ComponentArray Class
+ */
+var ComponentArray = /*#__PURE__*/function () {
+  function ComponentArray(componentCreator) {
+    var selector = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    (0, _classCallCheck2["default"])(this, ComponentArray);
+    this.isShared = false;
+    this.components = [];
+    this._componentCreator = void 0;
+    this._componentCreator = componentCreator;
+
+    if (selector) {
+      this.attach(selector);
+    }
+  }
+
+  (0, _createClass2["default"])(ComponentArray, [{
+    key: "_select",
+    value: function _select() {
+      return typeof this._selector === 'function' ? this._selector() : document.querySelectorAll(this._selector);
+    }
+  }, {
+    key: "on",
+    value: function on(type, handler) {
+      this.components.map(function (c) {
+        c.on(type, handler);
+      });
+    }
+  }, {
+    key: "push",
+    value: function push() {
+      var _this$components;
+
+      return (_this$components = this.components).push.apply(_this$components, arguments);
+    }
+  }, {
+    key: "filter",
+    value: function filter() {
+      var _this$components2;
+
+      return (_this$components2 = this.components).filter.apply(_this$components2, arguments);
+    }
+  }, {
+    key: "every",
+    value: function every() {
+      var _this$components3;
+
+      return (_this$components3 = this.components).every.apply(_this$components3, arguments);
+    }
+  }, {
+    key: "map",
+    value: function map() {
+      var _this$components4;
+
+      return (_this$components4 = this.components).map.apply(_this$components4, arguments);
+    }
+  }, {
+    key: "willUnmount",
+    value: function willUnmount() {
+      this.components.map(function (c) {
+        c.willUnmount();
+      });
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      if (this.isShared) {
+        return;
+      }
+
+      this.components.map(function (c) {
+        c.destroy();
+      });
+      this.components = [];
+    }
+  }, {
+    key: "attach",
+    value: function attach(selector) {
+      var _this = this;
+
+      this._selector = selector;
+      this._elements = this._select();
+      var elements = (0, _toConsumableArray2["default"])(this._elements);
+      elements.map(function (e) {
+        var component = new _this._componentCreator();
+        component.attach(function () {
+          return e;
+        });
+
+        _this.components.push(component);
+      });
+    }
+  }, {
+    key: "loaded",
+    value: function loaded() {
+      this.components.map(function (c) {
+        c.loaded();
+      });
+    }
+  }, {
+    key: "view",
+    value: function view() {
+      this.components.map(function (c) {
+        c.view();
+      });
+    }
+  }]);
+  return ComponentArray;
+}();
+
+exports.default = ComponentArray;
+
+/***/ }),
+
+/***/ "./src/assets/js/lib/ComponentLifeCycle.js":
+/*!*************************************************!*\
+  !*** ./src/assets/js/lib/ComponentLifeCycle.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js"));
+
+var _Component = _interopRequireDefault(__webpack_require__(/*! ./Component */ "./src/assets/js/lib/Component.js"));
+
+var _ComponentArray = _interopRequireDefault(__webpack_require__(/*! ./ComponentArray */ "./src/assets/js/lib/ComponentArray.js"));
+
+/**
+ * ComponentLifeCycle
+ *
+ * pjaxよるページ遷移時にComponentを再生成する
+ */
+var ComponentLifeCycle = /*#__PURE__*/function () {
+  // shared: 共通コンポーネントでページ遷移で更新されない
+  function ComponentLifeCycle(shared, map) {
+    (0, _classCallCheck2["default"])(this, ComponentLifeCycle);
+    this._components = [];
+    this._map = {};
+    this._shared = {};
+    this._shared = shared;
+    this._map = map;
+  }
+
+  (0, _createClass2["default"])(ComponentLifeCycle, [{
+    key: "_willUnmount",
+    value: function _willUnmount() {
+      this._components.map(function (c) {
+        c.willUnmount();
+      });
+    }
+  }, {
+    key: "_destruct",
+    value: function _destruct() {
+      this._components.map(function (c) {
+        c.destroy();
+      });
+
+      this._components = this._components.filter(function (c) {
+        return c.isShared;
+      });
+    }
+  }, {
+    key: "_setupSharedComponent",
+    value: function _setupSharedComponent() {
+      var _this = this;
+
+      Object.keys(this._shared).map(function (key) {
+        var ComponentClass = _this._shared[key];
+        var c = new _ComponentArray["default"](function () {
+          return new ComponentClass();
+        }, key);
+        c.isShared = true;
+
+        _this._components.push(c);
+      });
+    }
+  }, {
+    key: "_construct",
+    value: function _construct() {
+      var _this2 = this;
+
+      Object.keys(this._map).map(function (key) {
+        var ComponentClass = _this2._map[key];
+        var c = new _ComponentArray["default"](function () {
+          return new ComponentClass();
+        }, key);
+
+        _this2._components.push(c);
+      });
+    }
+  }, {
+    key: "_loaded",
+    value: function _loaded() {
+      this._components.map(function (c) {
+        c.loaded();
+      });
+    }
+  }, {
+    key: "_view",
+    value: function _view() {
+      this._components.map(function (c) {
+        c.view();
+      });
+    }
+  }, {
+    key: "start",
+    value: function start() {
+      this._setupSharedComponent();
+
+      this._construct();
+    }
+  }, {
+    key: "loaded",
+    value: function loaded() {
+      this._loaded();
+    }
+  }, {
+    key: "view",
+    value: function view() {
+      this._view();
+    }
+  }]);
+  return ComponentLifeCycle;
+}();
+
+exports.default = ComponentLifeCycle;
 
 /***/ }),
 
@@ -120,6 +803,59 @@ var domLoaded = function domLoaded() {
 };
 
 exports.domLoaded = domLoaded;
+
+/***/ }),
+
+/***/ "./src/assets/js/sketches/exp/index.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/sketches/exp/index.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.setup = setup;
+exports.draw = draw;
+var width = window.innerWidth;
+var height = window.innerHeight;
+var r = 300;
+var t = 1.90;
+var n = 2;
+
+function setup() {
+  createCanvas(width, height);
+  stroke(0);
+  strokeWeight(3);
+  noFill();
+}
+
+function draw() {
+  background(255);
+  translate(width / 2, height / 2);
+
+  for (var i = 1; i < n; i++) {
+    beginShape();
+
+    for (var a = -PI; a < PI; a += 0.10 / r) {
+      var x = cos(a) + 0.5 * cos(a * 5);
+      var y = sin(a) + 0.5 * sin(a * -5);
+      var d = sin(a * 3.0 + t) * 3;
+      var dx = exp(-sq(d)) * cos(TAU * 100 * a + t * 2) * 70;
+      var dy = exp(-sq(d)) * sin(TAU * 100 * a + t * 2) * 70; // point(x * r, y * r);
+      // stroke(255 * a / TAU, 100, 100)
+
+      vertex(x * r - dx, y * r - dy);
+    }
+
+    endShape();
+  }
+
+  t += 0.005; // noLoop();
+}
 
 /***/ }),
 
@@ -961,15 +1697,23 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 
 var _promisfy = __webpack_require__(/*! ./lib/promisfy */ "./src/assets/js/lib/promisfy.js");
 
+var _ComponentLifeCycle = _interopRequireDefault(__webpack_require__(/*! ./lib/ComponentLifeCycle */ "./src/assets/js/lib/ComponentLifeCycle.js"));
+
+var _exp = __webpack_require__(/*! ./sketches/exp */ "./src/assets/js/sketches/exp/index.js");
+
 /*!
  * Licence: MIT
  * Copyright (c) 2020 Shanord Inc.
  * https://shanord.com/
  */
+// import {draw, setup} from './sketches/sketch'
+// import {draw, setup} from './sketches/marchingSquares'
+window.setup = _exp.setup;
+window.draw = _exp.draw;
 
-/* @flow */
 var applicationSequence = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
+    var componentLifeCycle;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -978,6 +1722,12 @@ var applicationSequence = /*#__PURE__*/function () {
             return (0, _promisfy.domLoaded)();
 
           case 2:
+            // do something
+            componentLifeCycle = new _ComponentLifeCycle["default"]({}, {// '.js-test': Test,
+            });
+            componentLifeCycle.start();
+
+          case 4:
           case "end":
             return _context.stop();
         }

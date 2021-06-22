@@ -9,7 +9,7 @@ module.exports = {
     server: {
       baseDir: `${paths.public}`
     },
-    open: false,
+    open: true,
     notify: false,
     snippetOptions: {
       rule: {
@@ -22,6 +22,7 @@ module.exports = {
     files: [
       `${paths.public}**/*.js`,
       `${paths.public}**/*.html`,
+      `${paths.src}/**/*.js`,
     ],
   },
 };

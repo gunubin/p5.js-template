@@ -4,7 +4,7 @@ const r = 300
 let t = 1.90
 const n = 2
 
-function setup() {
+export function setup() {
   createCanvas(width, height)
 
   stroke(0)
@@ -12,7 +12,7 @@ function setup() {
   noFill()
 }
 
-function draw() {
+export function draw() {
   background(255)
 
   translate(width / 2, height / 2)

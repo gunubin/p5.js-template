@@ -1,4 +1,6 @@
-const clamp = (x, lowerlimit, upperlimit) => {
+
+
+export const clamp = (x, lowerlimit, upperlimit) => {
   if (x < lowerlimit)
     x = lowerlimit;
   if (x > upperlimit)
@@ -6,7 +8,7 @@ const clamp = (x, lowerlimit, upperlimit) => {
   return x;
 }
 
-const linearstep = (edge0, edge1, x) => {
+export const linearstep = (edge0, edge1, x) => {
   // linearstep (not a builtin function)
   const t = (x - edge0) / (edge1 - edge0);
   // when p.y == edge0 => t = 0.0

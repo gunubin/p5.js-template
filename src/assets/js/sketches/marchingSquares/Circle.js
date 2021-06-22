@@ -1,9 +1,9 @@
-class Circle {
+export class Circle {
   x = 0
   y = 0
-  dx = random(-2, 2)
-  dy = random(-2, 2)
-  r = random(50, 150)
+  dx = random(-4, 4)
+  dy = random(-4, 4)
+  r = random(20, 100)
   isMouse = false
 
   // r = 100
