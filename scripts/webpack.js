@@ -4,7 +4,10 @@ const webpack = require('webpack')
 
 const webpackEnv = 'development'
 
-const compiler = webpack(configure(webpackEnv))
+// example: yarn run [sketchName]
+const [, , sketchName = 'marchingSquares'] = process.argv
+
+const compiler = webpack(configure(webpackEnv, sketchName))
 compiler.watch({}, (err, stats) => {
   console.log(stats.toString(statsOptions))
   if (err) {

@@ -10,7 +10,7 @@ const imageInlineSizeLimit = parseInt(
   process.env.IMAGE_INLINE_SIZE_LIMIT || '10000',
 )
 
-module.exports = (webpackEnv) => {
+module.exports = (webpackEnv, sketchName) => {
   const isEnvProduction = webpackEnv === 'production'
   const isEnvDevelopment = webpackEnv === 'development'
 
@@ -107,6 +107,7 @@ module.exports = (webpackEnv) => {
     },
     plugins: [
       new webpack.DefinePlugin({
+        'process.sketchName': JSON.stringify(sketchName),
         'process.env.NODE_ENV': JSON.stringify('development'),
         'process.env.BROWSER': true,
       }),

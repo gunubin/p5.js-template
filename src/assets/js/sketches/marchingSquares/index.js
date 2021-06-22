@@ -171,7 +171,7 @@ export function draw() {
     }
   }
 
-  noLoop()
+  // noLoop()
 }
 
 function getState(a, b, c, d) {
